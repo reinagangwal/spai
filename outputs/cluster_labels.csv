@@ -1,0 +1,21 @@
+month,cluster_id,cluster_label
+2013-10,1,Bills-heavy month (cluster 1)
+2013-11,0,Bills-heavy month
+2013-12,2,Bills-heavy month (cluster 2)
+2014-01,2,Bills-heavy month (cluster 2)
+2014-02,0,Bills-heavy month
+2014-03,1,Bills-heavy month (cluster 1)
+2014-04,2,Bills-heavy month (cluster 2)
+2014-05,0,Bills-heavy month
+2014-06,0,Bills-heavy month
+2014-07,0,Bills-heavy month
+2014-08,1,Bills-heavy month (cluster 1)
+2014-09,1,Bills-heavy month (cluster 1)
+2014-10,2,Bills-heavy month (cluster 2)
+2014-11,2,Bills-heavy month (cluster 2)
+2014-12,0,Bills-heavy month
+2015-01,1,Bills-heavy month (cluster 1)
+2015-02,0,Bills-heavy month
+2015-03,0,Bills-heavy month
+2015-04,2,Bills-heavy month (cluster 2)
+2015-05,0,Bills-heavy month
