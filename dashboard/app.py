@@ -49,29 +49,7 @@ with tab_overview:
 
 with tab_cls:
     st.subheader("Classification (Random Forest)")
-
-    report_path = os.path.join(repo_root, "outputs", "rf_val_report.txt")
-    cm_path = os.path.join(repo_root, "outputs", "rf_confusion_matrix.png")
-    fi_path = os.path.join(repo_root, "outputs", "rf_feature_importance.png")
-
-    if os.path.exists(report_path):
-        st.markdown("**Validation report**")
-        st.code(open(report_path, "r", encoding="utf-8").read())
-    else:
-        st.info("Run `py src/categorise.py` to generate the validation report + plots.")
-
-    cols = st.columns(2)
-    with cols[0]:
-        if os.path.exists(cm_path):
-            st.image(cm_path, caption="Confusion matrix (val)", use_container_width=True)
-        else:
-            st.warning("Missing `outputs/rf_confusion_matrix.png`")
-
-    with cols[1]:
-        if os.path.exists(fi_path):
-            st.image(fi_path, caption="Top feature importances", use_container_width=True)
-        else:
-            st.warning("Missing `outputs/rf_feature_importance.png`")
+    st.info("Classification/model artifacts were removed from this branch.")
 
 
 with tab_anom:
