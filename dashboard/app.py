@@ -37,14 +37,12 @@ with tab_overview:
 
     anomaly_path = os.path.join(repo_root, "outputs", "anomaly_df.csv")
     cluster_path = os.path.join(repo_root, "outputs", "cluster_labels.csv")
-    model_path = os.path.join(repo_root, "models", "rf_model.pkl")
 
     st.markdown("- **Artifacts status**")
     st.write(
         {
             "outputs/anomaly_df.csv": os.path.exists(anomaly_path),
             "outputs/cluster_labels.csv": os.path.exists(cluster_path),
-            "models/rf_model.pkl": os.path.exists(model_path),
         }
     )
 
