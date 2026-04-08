@@ -1,7 +1,6 @@
 import os
 import warnings
 
-import joblib
 import numpy as np
 import pandas as pd
 import seaborn as sns
@@ -93,7 +92,6 @@ def train_and_evaluate() -> None:
     report = classification_report(y_val, y_pred)
 
     os.makedirs("outputs", exist_ok=True)
-    os.makedirs("models", exist_ok=True)
 
     # Save evaluation summary
     with open(os.path.join("outputs", "rf_val_report.txt"), "w", encoding="utf-8") as f:
@@ -125,10 +123,7 @@ def train_and_evaluate() -> None:
     plt.savefig(os.path.join("outputs", "rf_feature_importance.png"), dpi=200)
     plt.close()
 
-    # Save model
-    joblib.dump(model, os.path.join("models", "rf_model.pkl"))
-
-    print(f"Saved model to models/rf_model.pkl | val accuracy={acc:.4f} weighted_f1={f1:.4f}")
+    print(f"RandomForest trained | val accuracy={acc:.4f} weighted_f1={f1:.4f}")
     print("Saved outputs/rf_confusion_matrix.png and outputs/rf_feature_importance.png")
 
 
