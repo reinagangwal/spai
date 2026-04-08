@@ -26,6 +26,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+from torchgen import model
  
 warnings.filterwarnings("ignore")
 tf.get_logger().setLevel("ERROR")
@@ -40,10 +41,10 @@ LOSS_PLOT    = os.path.join(OUTPUT_DIR, "training_loss.png")
  
 WINDOW_SIZE    = 4       # sliding window (weeks)
 FORECAST_STEPS = 7       # weeks to forecast ahead
-EPOCHS         = 20
-BATCH_SIZE     = 16
-VAL_SPLIT      = 0.15    # fraction of training data used for validation
-LSTM_UNITS     = 64
+EPOCHS         = 25
+BATCH_SIZE     = 8
+VAL_SPLIT      = 0.2    # fraction of training data used for validation
+LSTM_UNITS     = 40
 DROPOUT_RATE   = 0.2
 RANDOM_SEED    = 42
  
@@ -107,22 +108,19 @@ def make_sequences(data: np.ndarray, window: int):
 # ──────────────────────────────────────────────
  
 def build_model(window_size: int, num_categories: int) -> tf.keras.Model:
-    """
-    Build a simple LSTM regressor.
- 
-    Architecture
-    ------------
-    LSTM(64)  →  Dropout  →  Dense(32, relu)  →  Dense(num_categories)
-    """
     model = Sequential([
-        LSTM(LSTM_UNITS,
-             input_shape=(window_size, num_categories),
-             return_sequences=False,
-             name="lstm_1"),
-        Dropout(DROPOUT_RATE, name="dropout_1"),
-        Dense(32, activation="relu", name="dense_hidden"),
-        Dense(num_categories, activation="linear", name="output"),
-    ])
+    LSTM(32, input_shape=(window_size, num_categories)),
+    Dropout(0.2),
+    Dense(32, activation="relu"),
+    Dense(num_categories)
+])
+
+    
+    
+    def weighted_mse(y_true, y_pred):
+        weights = tf.constant([1, 1, 1, 1, 1, 2], dtype=tf.float32)  # give Travel more weight
+        return tf.reduce_mean(weights * tf.square(y_true - y_pred))
+
     model.compile(optimizer="adam", loss="mse", metrics=["mae"])
     model.summary()
     return model
