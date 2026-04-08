@@ -1,0 +1,20 @@
+month,exp_type,amount_raw,z_score,explanation,method
+2014-07,Bills,41433680,-5.334702003186803,9% below monthly average for Bills,zscore
+2014-08,Bills,50861649,4.060162220629753,1.2x above monthly average for Bills,zscore
+2015-01,Bills,50233016,4.18173810416131,1.1x above monthly average for Bills,zscore
+2015-05,Bills,36518161,-3.9811717023994944,22% below monthly average for Bills,zscore
+2015-02,Entertainment,31221992,-5.2586411417579555,18% below monthly average for Entertainment,zscore
+2014-06,Food,34478325,-8.334335105808846,18% below monthly average for Food,zscore
+2014-12,Food,39058805,-3.3478789922831527,11% below monthly average for Food,zscore
+2013-12,Fuel,41440215,7.15389205671071,1.1x above monthly average for Fuel,zscore
+2014-06,Fuel,36696922,-3.6154266576901515,5% below monthly average for Fuel,zscore
+2014-07,Fuel,40808245,4.241633814816616,1.1x above monthly average for Fuel,zscore
+2015-04,Fuel,30216278,-12.669653563581779,29% below monthly average for Fuel,zscore
+2014-02,Grocery,32123750,-14.38484098829469,18% below monthly average for Grocery,zscore
+2014-08,Grocery,37525614,7.209689153964185,1.1x above monthly average for Grocery,zscore
+2014-11,Grocery,39478945,4.06262860853793,1.1x above monthly average for Grocery,zscore
+2014-04,Travel,6261113,7.093533090589789,1.3x above monthly average for Travel,zscore
+2014-07,Travel,4483812,-6.389969634678503,31% below monthly average for Travel,zscore
+2014-10,Travel,5837558,3.9993806254349584,1.5x above monthly average for Travel,zscore
+2014-11,Travel,7929200,3.280117772728581,1.8x above monthly average for Travel,zscore
+2015-05,Entertainment,27388156,-2.4356202144336865,20% below monthly average for Entertainment,iqr
